@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreelanceFinder: Discovering Opportunities, Unlocking Potential</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-color: #f8fafc;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">FreelanceFinder</a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Find Work</a>
+                <a href="#freelancers" class="text-gray-600 hover:text-indigo-600 transition duration-300">Find Talent</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-indigo-600 transition duration-300">How It Works</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <button onclick="openModal('loginModal')" class="text-gray-600 hover:text-indigo-600 transition duration-300">Login</button>
+                <button onclick="openModal('signupModal')" class="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300">Sign Up</button>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">Find Work</a>
+             <a href="#freelancers" class="block py-2 text-gray-600 hover:text-indigo-600">Find Talent</a>
+             <a href="#how-it-works" class="block py-2 text-gray-600 hover:text-indigo-600">How It Works</a>
+             <div class="mt-4">
+                <button onclick="openModal('loginModal')" class="w-full text-left py-2 text-gray-600 hover:text-indigo-600">Login</button>
+                <button onclick="openModal('signupModal')" class="w-full mt-2 bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700">Sign Up</button>
+             </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-bg py-20 md:py-32">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight">Discover Opportunities,</h1>
+                <h2 class="text-4xl md:text-6xl font-bold text-indigo-600 leading-tight mb-6">Unlock Your Potential.</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-10">The ultimate platform connecting skilled freelancers with innovative projects. Your next big opportunity is just a click away.</p>
+                <a href="#projects" class="bg-indigo-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-indigo-700 transition duration-300">Get Started</a>
+            </div>
+        </section>
+
+        <!-- Featured Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Featured Projects</h2>
+                <div id="project-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">E-commerce Website Redesign</h3>
+                            <p class="text-gray-600 mb-4">Looking for a talented UI/UX designer to redesign our Shopify store for a better user experience.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-indigo-600">Budget: $2,500</span>
+                                <span class="text-sm text-gray-500">Posted 2 days ago</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">UI/UX</span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Shopify</span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Figma</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Mobile App Development (React Native)</h3>
+                            <p class="text-gray-600 mb-4">We need an experienced React Native developer to build a cross-platform social media app.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-indigo-600">Budget: $8,000</span>
+                                <span class="text-sm text-gray-500">Posted 5 days ago</span>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-200">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">React Native</span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Firebase</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">Content Writer for Tech Blog</h3>
+                            <p class="text-gray-600 mb-4">Seeking a skilled writer to create engaging blog posts about AI and machine learning.</p>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm font-medium text-indigo-600">Budget: $50/article</span>
+                                <span class="text-sm text-gray-500">Posted 1 week ago</span>
+                            </div>
+                             <div class="mt-4 pt-4 border-t border-gray-200">
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Content Writing</span>
+                                <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">SEO</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <button id="load-more-projects" class="bg-gray-200 text-gray-800 px-6 py-3 rounded-lg hover:bg-gray-300 transition duration-300">Load More Projects</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="bg-gray-50 py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">How It Works</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+                    <!-- Step 1 -->
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v11.494m-5.747-8.994l11.494 0M4.753 12l14.494 0"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">1. Post a Project</h3>
+                        <p class="text-gray-600">Clients describe their needs, set a budget, and post a project for our community of freelancers.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="p-6">
+                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">2. Find & Bid</h3>
+                        <p class="text-gray-600">Freelancers browse projects, find ones that match their skills, and submit compelling bids.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="p-6">
+                        <div class="flex items-center justify-center h-16 w-16 rounded-full bg-indigo-100 text-indigo-600 mx-auto mb-4">
+                           <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">3. Collaborate & Pay</h3>
+                        <p class="text-gray-600">Clients hire the best candidate. Collaborate, get work done, and make secure payments through our platform.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Freelancers Section -->
+        <section id="freelancers" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold text-center mb-12">Meet Top Freelancers</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Freelancer Card 1 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=JS" alt="Jane Smith" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-semibold">Jane Smith</h3>
+                        <p class="text-indigo-600">Full-Stack Developer</p>
+                        <p class="text-gray-500 text-sm mt-2">Specializing in React, Node.js, and serverless architecture.</p>
+                    </div>
+                    <!-- Freelancer Card 2 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=AD" alt="Alex Doe" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-semibold">Alex Doe</h3>
+                        <p class="text-indigo-600">Graphic Designer</p>
+                        <p class="text-gray-500 text-sm mt-2">Creating stunning visuals and brand identities that stand out.</p>
+                    </div>
+                    <!-- Freelancer Card 3 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=CW" alt="Chris Wilson" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-semibold">Chris Wilson</h3>
+                        <p class="text-indigo-600">Digital Marketer</p>
+                        <p class="text-gray-500 text-sm mt-2">Expert in SEO, content marketing, and social media strategy.</p>
+                    </div>
+                    <!-- Freelancer Card 4 -->
+                    <div class="bg-white rounded-lg shadow-lg p-6 text-center transform hover:scale-105 transition duration-300">
+                        <img src="https://placehold.co/100x100/E2E8F0/4A5568?text=PT" alt="Patricia Taylor" class="w-24 h-24 rounded-full mx-auto mb-4">
+                        <h3 class="text-lg font-semibold">Patricia Taylor</h3>
+                        <p class="text-indigo-600">Project Manager</p>
+                        <p class="text-gray-500 text-sm mt-2">Agile certified professional ensuring projects are delivered on time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">FreelanceFinder</h3>
+                    <p class="text-gray-400">Discovering Opportunities, Unlocking Potential.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">For Freelancers</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Find Work</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Create Profile</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">For Clients</h3>
+                    <ul>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Find Talent</a></li>
+                        <li class="mb-2"><a href="#" class="text-gray-400 hover:text-white">Post a Project</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 text-center text-gray-500">
+                <p>&copy; 2025 FreelanceFinder. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Modals -->
+    <!-- Login Modal -->
+    <div id="loginModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
+            <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+            <form>
+                <div class="mb-4">
+                    <label for="login-email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="login-email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div class="mb-6">
+                    <label for="login-password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="login-password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Login</button>
+            </form>
+            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">&times;</button>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center">
+        <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-md mx-4">
+            <h2 class="text-2xl font-bold text-center mb-6">Sign Up</h2>
+            <form>
+                 <div class="mb-4">
+                    <label for="signup-name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="signup-name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div class="mb-4">
+                    <label for="signup-email" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="signup-email" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <div class="mb-6">
+                    <label for="signup-password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <input type="password" id="signup-password" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500">
+                </div>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 rounded-lg hover:bg-indigo-700">Create Account</button>
+            </form>
+            <button onclick="closeModal('signupModal')" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">&times;</button>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Mobile Menu ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // --- Smooth Scrolling ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // --- Load More Projects ---
+        const loadMoreBtn = document.getElementById('load-more-projects');
+        const projectList = document.getElementById('project-list');
+        
+        loadMoreBtn.addEventListener('click', () => {
+            // This is a mock function. In a real app, you would fetch more projects from a server.
+            const newProject = `
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">New Project: API Integration</h3>
+                        <p class="text-gray-600 mb-4">We need a backend developer to integrate a third-party payment API.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium text-indigo-600">Budget: $1,200</span>
+                            <span class="text-sm text-gray-500">Posted just now</span>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200">
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">API</span>
+                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Backend</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            projectList.insertAdjacentHTML('beforeend', newProject);
+        });
+
+        // --- Modal Logic ---
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        // Close modal on outside click
+        window.addEventListener('click', function(event) {
+            if (event.target.id === 'loginModal' || event.target.id === 'signupModal') {
+                closeModal(event.target.id);
+            }
+        });
+    </script>
+
+</body>
+</html>
